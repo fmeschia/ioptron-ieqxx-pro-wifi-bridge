@@ -25,6 +25,9 @@ After the flashing is successful, a new Wi-Fi network with name "ESP_xxxx" shoul
 ### 3. Build the circuit
 The EAGLE board file is easy to follow and transfer to a protoboard. The "traces" on the bottom layer are meant to be solder bridges between adjacent copper pads of the protoboard, whereas the air wires are meant to be real jumper wires. When the wire connects directly to a part lead, it is meant to be routed on the bottom of the board. When the wire connects to a solder bridge, then the idea is that the wire can be routed on the top of the board.
 
+![Prototype](images/prototype.jpg "Prototype on protoboard")
+
+*An early prototype of this circuit. Note that the connectors are swapped, when compared to the Eagle board layout*
 ##Usage
 ###Connection
 To connect the circuit to the mount, you need to use two cords: 
@@ -34,7 +37,11 @@ To connect the circuit to the mount, you need to use two cords:
 "Straight" cords are cords in which the order of the colors of the inner wires is the same if you look at both plugs (when observed from the same side). The coiled cords that came with the mount came are straight cords:
 
 ![Straight cord plugs](images/straight_cord.jpg "Plugs of a straight cord")
+
+*A 6P6C straight cord*
 ###Fire it up
 The bridge draws power directly from the mount. When the mount is powered up, the board is also energized and the LED should light up.
 ###Enjoy!
 Point your favorite telescope control software to 192.168.4.1, port 23, and enjoy wireless telescope control!
+
+[Here](https://www.youtube.com/watch?v=_uhQ0Lzc3-E) you can find a video of the operation an iEQ45 Pro mount with this circuit and the commercial Sky Safari app.
