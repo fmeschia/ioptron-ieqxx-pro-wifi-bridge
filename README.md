@@ -23,7 +23,7 @@ After the flashing is successful, a new Wi-Fi network with name "ESP_xxxx" shoul
 2. Disable the UART debug log
 
 ### 3. Build the circuit
-The EAGLE board file is easy to follow and transfer to a protoboard. The "traces" on the bottom layer are meant to be solder bridges between adjacent copper pads of the protoboard, whereas the air wires are meant to be real jumper wires. When the wire connects directly to a part lead, it is meant to be routed on the bottom of the board. When the wire connects to a solder bridge, then the idea is that the wire can be routed on the top of the board.
+The EAGLE board file is easy to follow and transfer to a protoboard. The "traces" on the bottom layer are meant to be solder bridges between adjacent copper pads of the protoboard, whereas the air wires are meant to be real jumper wires. When the wire connects directly to a part lead, it is meant to be routed on the bottom of the board. When there are vias, the idea is that the wire can be routed on the top of the board, but of course that's just a suggestion.
 
 ![Prototype](images/prototype.jpg "Prototype on protoboard")
 
@@ -39,7 +39,7 @@ To connect the circuit to the mount, you need to use two cords:
 ![Straight cord plugs](images/straight_cord.jpg "Plugs of a straight cord")
 
 *A 6P6C straight cord*
-###Fire it up
+###Power it up
 The bridge draws power directly from the mount. When the mount is powered up, the board is also energized and the LED should light up.
 ###Enjoy!
 Point your favorite telescope control software to 192.168.4.1, port 23, and enjoy wireless telescope control!
