@@ -26,8 +26,9 @@ After the flashing is successful, a new Wi-Fi network with name "ESP_xxxx" shoul
 The EAGLE board file is easy to follow and transfer to a protoboard. The "traces" on the bottom layer are meant to be solder bridges between adjacent copper pads of the protoboard, whereas the air wires are meant to be real jumper wires. When the wire connects directly to a part lead, it is meant to be routed on the bottom of the board. When there are vias, the idea is that the wire can be routed on the top of the board, but of course that's just a suggestion.
 
 ![Prototype](images/prototype.jpg "Prototype on protoboard")
+![Prototype back](images/prototype_back.jpg "Backside of the prototype board")
 
-*An early prototype of this circuit. Note that the connectors are swapped, when compared to the Eagle board layout*
+*An early prototype of this circuit. Note that the there are differences in the connectors' positions and pinouts, when compared to the final Eagle board layout. The pictures are just meant to illustrate the solder bridge technique.*
 ##Usage
 ###Connection
 To connect the circuit to the mount, you need to use two cords: 
