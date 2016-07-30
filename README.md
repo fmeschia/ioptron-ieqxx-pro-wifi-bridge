@@ -9,6 +9,9 @@ An ESP8266 and [esp-link](https://github.com/jeelabs/esp-link)-based Wi-Fi to RS
 * Powered directly from the mount, via the iOptron port, with an efficient DC-to-DC converter based on the MC34063 switch-mode converter
 * Easy to build, with through-hole parts and protoboard-friendly design
 
+##Disclaimer
+This project comes with no warranty. The project files may contain mistakes and errors. If you build this circuit, it is solely your responsibility to make sure that it doesn't damage your mount or other equipment. Test all voltages and polarities before making any connections. By building the circuit you accept that I will have no liability whatsoever for damages or injuries that you or other parties may incur in during the building process or during the operation of the circuit.
+
 ##Building instructions
 ### 1. Flash the ESP-01 module
 The ESP-01 module must be flashed with the esp-link firmware. I have tested version 2.2.3 and it works well.
