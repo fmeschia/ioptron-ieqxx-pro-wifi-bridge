@@ -10,7 +10,7 @@ An ESP8266 and [esp-link](https://github.com/jeelabs/esp-link)-based Wi-Fi to RS
 * Easy to build, with through-hole parts and protoboard-friendly design
 
 ##Disclaimer
-This project comes with no warranty. The project files may contain mistakes and errors. If you build this circuit, it is solely your responsibility to make sure that it doesn't damage your mount or other equipment. Test all voltages and polarities before making any connections. By building the circuit you accept that I will have no liability whatsoever for damages or injuries that you or other parties may incur in during the building process or during the operation of the circuit.
+This project comes with no warranty. The project files may contain mistakes and errors. If you build this circuit, it is solely your responsibility to make sure that it doesn't damage your mount or other equipment, and doesn't injure you or other people. Test all voltages and polarities before making any connections. By building the circuit you accept that I will have no liability whatsoever for damages or injuries that you or other parties may incur in during the building process or during the operation of the circuit.
 
 ##Building instructions
 ### 1. Flash the ESP-01 module
