@@ -15,7 +15,9 @@ This project comes with no warranty. The project files may contain mistakes and 
 ##Building instructions
 ### 1. Flash the ESP-01 module
 The ESP-01 module must be flashed with the esp-link firmware. I have tested version 2.2.3 and it works well.
-In order to flash the module, I recommend following the instructions present on the [release page](https://github.com/jeelabs/esp-link/releases) of the esp-link GitHub repository. Remember to enable flash programming mode by tying GPIO0 to groud and rebooting the module, before trying to upload the firmware code.
+In order to flash the module, I recommend following the instructions present on the [release page](https://github.com/jeelabs/esp-link/releases) of the esp-link GitHub repository. Remember to enable flash programming mode by tying GPIO0 to ground and rebooting the module, before trying to upload the firmware code. The following is a schematic of how one should connect the ESP-01 module to a FTDI232 3.3V breakout board like the one sold by Sparkfun:
+
+![Flashing setup](images/flashing_setup.png "Hardware setup for flashing via USB")
 ### 2. Configure the esp-link bridge
 After the flashing is successful, a new Wi-Fi network with name "ESP_xxxx" should be visible. After connecting to that network, point your browser to http://192.168.4.1. If everything works fine, the browser should show the esp-link web interface. There are two simple configuration steps to do:
 
@@ -28,7 +30,7 @@ The EAGLE board file is easy to follow and transfer to a protoboard. The "traces
 ![Prototype](images/prototype.jpg "Prototype on protoboard")
 ![Prototype back](images/prototype_back.jpg "Backside of the prototype board")
 
-*An early prototype of this circuit. Note that the there are differences in the connectors' positions and pinouts, when compared to the final Eagle board layout. The pictures are just meant to illustrate the solder bridge technique.*
+*A prototype of this circuit.*
 ##Usage
 ###Connection
 To connect the circuit to the mount, you need to use two cords: 
