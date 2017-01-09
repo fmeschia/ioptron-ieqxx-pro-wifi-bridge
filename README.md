@@ -2,6 +2,7 @@
 
 An ESP8266 and [esp-link](https://github.com/jeelabs/esp-link)-based Wi-Fi to RS-232 bridge to allow TCP wireless control of an iOptron iEQ Pro mount (tested on iEQ45 Pro, should also work on iEQ30 Pro).
 
+[Here](https://www.youtube.com/watch?v=_uhQ0Lzc3-E) you can find a video of the operation an iEQ45 Pro mount with this circuit and the commercial Sky Safari app.
 
 ##Features
 * Uses an inexpensive ESP8266 ESP-01 module
@@ -46,5 +47,3 @@ To connect the circuit to the mount, you need to use two cords:
 The bridge draws power directly from the mount. When the mount is powered up, the board is also energized and the LED should light up.
 ###Enjoy!
 Point your favorite telescope control software to 192.168.4.1, port 23, and enjoy wireless telescope control!
-
-[Here](https://www.youtube.com/watch?v=_uhQ0Lzc3-E) you can find a video of the operation an iEQ45 Pro mount with this circuit and the commercial Sky Safari app.
