@@ -46,7 +46,7 @@ To connect the circuit to the mount, you need to use two cords:
 ###Power it up
 The bridge draws power directly from the mount. When the mount is powered up, the board is also energized and the LED should light up.
 ###Test it
-If you have a digital mixed-signal oscilloscope, you can test if the board works properly by capturing the output of the RXD pin of the RS-232 port while connected to the ESP8266 Wifi AP and while sending a string to the TCP port 23 of the ESP8266 IP address (by default, 192.168.4.1). Here is a sample screenshot of the output of a USB logic analyzer while sending the string "HELLO" to the bridge board:
+If you have a digital mixed-signal oscilloscope, you can test if the board works properly by capturing the output of the RXD pin of the RS-232 port while connected to the ESP8266 Wifi AP and while sending a string to the TCP port 23 of the ESP8266 IP address (by default, 192.168.4.1). Here is a sample screenshot of the output of a USB logic analyzer while sending the string "HELLO" (ASCII 0x48 0x45 0x4C 0x4C 0x4F plus a 0x0A newline) to the bridge board:
 
 ![Logic analyzer output](images/serialsnoop.png "Logic analyzer output")
 ###Enjoy!
