@@ -7,7 +7,8 @@ An ESP8266 and [esp-link](https://github.com/jeelabs/esp-link)-based Wi-Fi to RS
 ##Features
 * Uses an inexpensive ESP8266 ESP-01 module
 * Uses the well tested [esp-link](https://github.com/jeelabs/esp-link) open source firmware to implement a transparent TCP-to-serial bridge
-* Powered directly from the mount, via the iOptron port, with an efficient DC-to-DC converter based on the MC34063 switch-mode converter
+* Powered directly from the mount, via the iOptron port, with an efficient 3.3V DC-to-DC converter based on the MC34063 switch-mode converter
+* RS-232 comatibility ensured by a MAX3232 driver/receiver
 * Easy to build, with through-hole parts and protoboard-friendly design
 
 ##Disclaimer
