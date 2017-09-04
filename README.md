@@ -17,30 +17,63 @@ This project comes with no warranty. The project files may contain mistakes and 
 ## Building instructions
 ### 1. Flash the ESP-01 module
 The ESP-01 module must be flashed with the esp-link firmware. I have tested version 2.2.3 and it works well.
-In order to flash the module, I recommend following the instructions present on the [release page](https://github.com/jeelabs/esp-link/releases) of the esp-link GitHub repository. Remember to enable flash programming mode by tying GPIO0 to ground and rebooting the module, before trying to upload the firmware code. The following is a schematic of how one should connect the ESP-01 module to a FTDI232 3.3V breakout board like the one sold by Sparkfun:
+In order to flash the module, I recommend following the instructions present on the [release page](https://github.com/jeelabs/esp-link/releases/tag/v2.2.3) of the esp-link GitHub repository. Remember to enable flash programming mode by tying GPIO0 to ground and rebooting the module, before trying to upload the firmware code. The following is a schematic of how one should connect the ESP-01 module to a FTDI232 3.3V breakout board like the one sold by Sparkfun:
 
 ![Flashing setup](images/flashing_setup.png "Hardware setup for flashing via USB")
+
+In my case, I used a 8-Mbit ESP-01 module, and in order to flash it (from a macOS system) I first installed esptool 1.1:
+
+    $ curl -L https://github.com/themadinventor/esptool/archive/v1.1.tar.gz | tar xzf -
+    $ cd esptool-1.1
+    $ sudo python setup.py install
+
+And then I used the following commands:
+
+    $ curl -L https://github.com/jeelabs/esp-link/releases/download/v2.2.3/esp-link-v2.2.3.tgz | tar xzf -
+    $ cd esp-link-v2.2.3
+    $ esptool.py --port /dev/tty.usbserial-A601LLNU --baud 460800 write_flash -fs 8m -ff 40m 0x00000 boot_v1.5.bin 0x1000 user1.bin 0x7E000 blank.bin
+    esptool.py v1.1
+    Connecting...
+    Running Cesanta flasher stub...
+    Flash params set to 0x0020
+    Writing 4096 @ 0x0... 4096 (100 %)
+    Wrote 4096 bytes at 0x0 in 0.1 seconds (292.3 kbit/s)...
+    Writing 307200 @ 0x1000... 307200 (100 %)
+    Wrote 307200 bytes at 0x1000 in 7.1 seconds (347.0 kbit/s)...
+    Writing 4096 @ 0x7e000... 4096 (100 %)
+    Wrote 4096 bytes at 0x7e000 in 0.1 seconds (298.3 kbit/s)...
+    Leaving...
+
 ### 2. Configure the esp-link bridge
-After the flashing is successful, a new Wi-Fi network with name "ESP_xxxx" should be visible. After connecting to that network, point your browser to http://192.168.4.1. If everything works fine, the browser should show the esp-link web interface. As a bare minimum, there are two configuration steps to do:
+After successfully flashing the ESP8266 module, you should power it down, remove the connection from GPI0 to ground, then power it up again and configure it. I recommend *not* powering it from USB via the FTDI232 board for this, because it doesn't really supply enough current for the ESP8266 in normal operation. Instead, power it from a regulated 3.3V (*not* 5V, it would burn it instantly!) power supply capable of delivering 0.5A.
+Once powered up, a new Wi-Fi network with name "ESP_xxxx" should be visible. After connecting to that network, point your browser to http://192.168.4.1. If everything works fine, the browser should show the esp-link web interface. As a bare minimum, there are three configuration steps to do:
 
-1. Configure the serial port to 9600 bps, 8 data bits, 1 stop bit, no parity (9600 8N1)
-2. Disable the UART debug log
+1. Configure the pin preset to "esp-01" 
 
-You will also probably want to change the Wifi network name and its security, but that's up to personal preference.
+    ![Esp-link-pin-preset](images/esp-link-conf-1.png "esp-link pin preset")
+
+2. Configure the serial port to 9600 bps, 8 data bits, 1 stop bit, no parity (9600 8N1) 
+
+    ![Esp-link-bps](images/esp-link-conf-2.png "esp-link serial port rate")
+
+3. Disable the UART debug log 
+
+    ![Esp-link-debug-log](images/esp-link-conf-3.png "esp-link debug log preset")
+
+You will also probably want to change the WiFi network name and its security, but that's up to personal preference.
 
 ### 3. Build the circuit
 The EAGLE board file is easy to follow and transfer to a protoboard. The "traces" on the bottom layer are meant to be solder bridges between adjacent copper pads of the protoboard, whereas the air wires are meant to be real jumper wires. When the wire connects directly to a part lead, it is meant to be routed on the bottom of the board. When there are vias, the idea is that the wire can be routed on the top of the board, but of course that's just a suggestion.
 
 ![Prototype](images/prototype.jpg "Prototype on protoboard")
 ![Prototype back](images/prototype_back.jpg "Backside of the prototype board")
-*A prototype of this circuit.*
 
 The project also includes an Eagle file for a simple through-hole-parts PCB. It is essentially a single-sided board: all the traces are routed on the solder side, and the component side has just a ground plane. The ground plane, on both sides, stops short of the ESP8266 trace antenna.
 
 ![PCB front](images/pcb_front.jpg "Front side of the PCB")
 ![PCB back](images/pcb_back.jpg "Back side of the PCB")
 ![PCB populated](images/pcb_populated.jpg "The populated PCB")
-*The circuit assembled on a PCB.*
+
 
 ## Usage
 ### Connection
